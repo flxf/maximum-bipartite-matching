@@ -1,14 +1,13 @@
 Simple Maximum Bipartite Matching
 =================================
 
-This is also known as the **augmenting path algorithm**.
+[So, you may have just learned this or similar augmenting path proof for finding
+the maximum cardinality matching in a bipartite graph!][1] This is pretty much
+the direct translation of that proof into an algorithm.
 
-So, you've just learned the augmenting path proof for finding the maximum
-cardinality matching in a bipartite graph! This is pretty much the direct
-translation of that proof into an algorithm.
-
-It runs in O(VE) time and is probably the easiest thing you can code from
-scratch if you're doing ACM and can afford it.
+This is the **augmenting path algorithm**. Instead of converting it into a flow
+problem, this runs in O(VE) time and is probably the easiest thing you can code
+from scratch if you're doing ACM and can afford it.
 
 We assume that you're working with an unweighted undirected graph.
 
@@ -43,3 +42,5 @@ This is one of a few possible outputs.
     A2 B1
     A3 B2
     A4 B3
+
+[1]: http://math.mit.edu/~goemans/18433S07/matching-notes.pdf
