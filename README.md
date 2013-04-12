@@ -22,7 +22,7 @@ its partition followed by a number `[ 0, size of partition )`.
 
 ### Sample Input
 
-    2 3 9
+    5 5 10
     A0 B0
     A1 B0
     A2 B0
@@ -32,12 +32,13 @@ its partition followed by a number `[ 0, size of partition )`.
     A4 B2
     B1 A4
     B3 A4
+    B4 A4
 
 ### Sample Output
 
 This is one of a few possible outputs.
 
-    size of maximum matching: 4
+    Size of maximum matching: 4
     A0 B0
     A2 B1
     A3 B2

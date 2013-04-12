@@ -5,7 +5,7 @@
 
 #define uint unsigned int
 #define UNMATCHED 0xffffffff
-#define MAX_INSTANCE_SIZE
+#define MAX_INSTANCE_SIZE 500
 
 using namespace std;
 
@@ -81,7 +81,7 @@ int main() {
     }
   }
 
-  printf("size of maximum matching: %d\n", size_matching);
+  printf("Size of maximum matching: %d\n", size_matching);
   for (uint i = 0; i < size_A; i++) {
     if (matched[i] != UNMATCHED) {
       vertex matched_A = uid_to_vertex(i);
