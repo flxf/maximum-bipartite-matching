@@ -5,13 +5,14 @@
 
 #define uint unsigned int
 #define UNMATCHED 0xffffffff
+#define MAX_INSTANCE_SIZE
 
 using namespace std;
 
 uint size_A, size_B, num_edges;
-vector<uint> graph[500];
-uint matched[500];
-bool visited[500];
+vector<uint> graph[MAX_INSTANCE_SIZE];
+uint matched[MAX_INSTANCE_SIZE];
+bool visited[MAX_INSTANCE_SIZE];
 
 typedef struct _vertex {
   char type;
@@ -55,7 +56,7 @@ bool augment_path(uint uid) {
 
 int main() {
   // initialize variables
-  fill(matched, matched + 500, UNMATCHED);
+  fill(matched, matched + MAX_INSTANCE_SIZE, UNMATCHED);
 
   scanf("%d %d %d\n", &size_A, &size_B, &num_edges);
 
@@ -73,7 +74,7 @@ int main() {
   uint size_matching = 0;
   for (uint i = 0; i < size_A; i++) {
     if (matched[i] == UNMATCHED) {
-      fill(visited, visited + 500, false);
+      fill(visited, visited + MAX_INSTANCE_SIZE, false);
       if (augment_path(i)) {
         size_matching++;
       }
