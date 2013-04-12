@@ -25,12 +25,19 @@ uint vertex_to_uid(vertex v) {
 
 vertex uid_to_vertex(uint uid) {
   vertex ret;
+  if (uid < size_A) {
+    ret = (vertex) { 'A', uid };
+  } else {
+    ret = (vertex) { 'B', uid - size_A };
+  }
   ret.type = (uid < size_A) ? 'A' : 'B';
   ret.id = (uid < size_A) ? uid : uid - size_A;
   return ret;
 }
 
 bool augment_path(uint uid) {
+  visited[uid] = true;
+
   for (uint i = 0; i < graph[uid].size(); i++) {
     uint neighbour = graph[uid][i];
     if (visited[neighbour]) {
